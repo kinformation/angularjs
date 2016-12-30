@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8">
+<title>AngularJS login</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+#body [ng-cloak],
+#body .ng-hide {
+    display: none !important;
+}
+</style>
+</head>
+<body id="body">
+<nav class="navbar navbar-default" ng-controller="NavCtrl">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/">AngularJS Example</a>
+        </div>
+        <div class="collapse navbar-collapse" ng-cloak ng-show="user">
+            <ul class="nav navbar-nav">
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/page1">Page1</a></li>
+                <li><a href="#/page2">Page2</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <button type="button" class="btn btn-default" ng-click="logout()">Logout</button>
+            </form>
+            <div class="navbar-text navbar-right">
+                {{user.username}}
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div ng-view></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.js"></script>
+<script src="service/AuthService.js"></script>
+<script src="controller/LoginController.js"></script>
+<script src="controller/RegistController.js"></script>
+<script src="controller/NavigationController.js"></script>
+<script src="config/route.js"></script>
+</body>
+</html>

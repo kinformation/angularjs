@@ -1,0 +1,45 @@
+<style>
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+input.ng-valid.ng-touched {
+  border: 1px solid green;
+}
+
+span.ng.error {
+  color: red;
+}
+span.ng.valid {
+  color: green;
+}
+</style>
+<form class="form-inline" name="form_regist">
+  <fieldset class="form-group">
+    <label>Email address</label><br>
+    <input type="email" class="form-control" name="email" placeholder="Email" ng-model="mail" ng-change="change()" required>
+    <span class="ng error" ng-show="form_regist.email.$error.required">必須</span>
+    <span class="ng valid" ng-show="form_regist.email.$valid">OK</span>
+    <span class="ng error">{{err_mail_duplication}}</span>
+  </fieldset><br><br>
+  <fieldset class="form-group">
+    <label>Name</label><br>
+    <input value="root" type="text" class="form-control" name="username" placeholder="Name" ng-model="username" required>
+    <span class="ng error" ng-show="form_regist.username.$error.required">必須</span>
+    <span class="ng valid" ng-show="form_regist.username.$valid">OK</span>
+  </fieldset><br><br>
+  <fieldset class="form-group">
+    <label>Password</label><br>
+    <input value="root" type="password" class="form-control" name="password" placeholder="Password" ng-model="password" ng-min=6 ng-max=12 required>
+    <span class="ng error" ng-show="form_regist.password.$error.required">必須</span>
+    <span class="ng valid" ng-show="form_regist.password.$valid">OK</span>
+  </fieldset><br><br>
+  <!--fieldset class="form-group">
+    <label>Birthday</label><br>
+    <input value="2018-01-01" type="date" class="form-control" name="barthday" placeholder="yyyy-MM-dd" ng-model="barthday" required>
+    <span class="ng error" ng-show="form_regist.barthday.$error.required">必須</span>
+    <span class="ng valid" ng-show="form_regist.barthday.$valid">OK</span>
+  </fieldset><br><br-->
+  <input type="button" class="btn btn-primary" disabled ng-click="regist()" ng-disabled="form_regist.$invalid" value="登録">
+  <input type="button" class="btn btn-link" ng-click="gologin()" value="ログイン">
+  <span class="text-danger" ng-show="alert">{{alert.msg}}</span>
+</form>

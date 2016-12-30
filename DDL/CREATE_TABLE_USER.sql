@@ -1,0 +1,11 @@
+USE angularjs;
+CREATE TABLE USER (
+  ID          INT AUTO_INCREMENT PRIMARY KEY  ,
+  NAME        VARCHAR(255)  NOT NULL          ,
+  PASSWORD    VARCHAR(255)  NOT NULL          ,
+  MAIL        VARCHAR(255)  NOT NULL          ,
+  DELETE_FLG  INT           NOT NULL DEFAULT 0,
+  CREATE_DATE DATETIME      NOT NULL          ,
+  UPDATE_DATE DATETIME      NOT NULL
+);
+

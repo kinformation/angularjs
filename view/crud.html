@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>crud</title>
+</head>
+<body ng-controller="MainCtrl">
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>name</th>
+      <th>password</th>
+      <th>mail</th>
+    </tr>
+    <tr ng-controller="DetailCtrl" ng-repeat="student in students">
+      <td>{{student.ID}}</td>
+      <td><input ng-model="student.NAME"></td>
+      <td><input ng-model="student.PASSWORD"></td>
+      <td><input ng-model="student.MAIL"></td>
+      <td><button ng-click="update()">更新</button></td>
+      <td><button ng-click="delete()">削除</button></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input ng-model="new_student.NAME"></td>
+      <td><input ng-model="new_student.PASSWORD"></td>
+      <td><input ng-model="new_student.MAIL"></td>
+      <td><button ng-click="add()">追加</button></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.min.js"></script>
+  <script src="controller/UsermgrController.js"></script>
+</body>
+</html>
